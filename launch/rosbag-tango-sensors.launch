@@ -1,0 +1,21 @@
+<launch>
+<arg name="bag_location" />
+
+      <node pkg="rosbag" type="record" name="rosbag_record_tango"
+            args="record --buffsize=0 --chunksize=0 -o $(arg bag_location) 
+            
+            /cmd_vel
+            /joint_states
+            /motor_commands
+            /tf
+	    /tf_static
+	    /zedm/joint_states
+	    /zedm/zed_node/left/camera_info
+	    /zedm/zed_node/left/image_rect_color
+	    /zedm/zed_node/left/image_rect_color/compressed
+	    /zedm/zed_node/odom
+	    /zedm/zed_node/parameter_descriptions
+	    /zedm/zed_node/parameter_updates
+	    /zedm/zed_node/pose" />
+
+</launch>
